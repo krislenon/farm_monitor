@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>PROFILE</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="style.js"></script>
+  <link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+<body>
+
+<nav class="navbar navbar-findcond navbar-fixed-top">
+    <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../views/home.html">HAHAH Farm Monitor</a>
+    </div>
+    <div class="collapse navbar-collapse" id="navbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Add<span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li>
+              <a href="" data-toggle="modal" data-target=".bannerformmodal">Farm Activities</a>
+            </li>
+            <li>
+              <a href="" data-toggle="modal" data-target=".bannerformmodal2">Plot Information</a>
+            </li>
+            <li>
+              <a href="" data-toggle="modal" data-target=".bannerformmodal3">Report</a>
+            </li>
+            <li>
+              <a href="" data-toggle="modal" data-target=".bannerformmodal4">Activity Request</a>
+            </li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">User<span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="#">Edit Profile</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Sign out</a></li>
+          </ul>
+        </li>
+      </ul>
+      <form class="navbar-form navbar-right search-form" role="search">
+        <input type="text" class="form-control" placeholder="Search" />
+      </form>
+    </div>
+  </div>
+</nav>
+
+<a href="#"><div class="panel-group col-md-2"></div></a>
+<div class="panel-group col-md-3">
+ <div class="panel panel-default">
+  <div class="panel-body">
+    <img src="facebook-avatar.jpg" class="pics">
+    <div class="panel panel-default">
+      <div class="panel-body">Ito yung username niya</div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-body">Dito yung whole name niya</div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-body">Birthday niya to</div>
+    </div>
+    <div class="panel panel-default">
+      <div class="panel-body">Eto Age</div>
+    </div>
+  </div>
+</div>
+</div>
+<div class="panel-group col-md-5">
+ <div class="panel panel-default">
+  <div class="panel-body">
+    <div class="form-group">
+      <h1>Edit Profile</h1><br>
+      <form>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Name</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter report id">
+        </div>
+        <div class="form-group">
+          <label for="example-date-input">Birthdate</label>
+          <input class="form-control" type="date" value="" id="example-date-input">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>
+</div>
+<a href="#"><div class="panel-group col-md-2"></div></a>
+
+<!-- Trigger the modal with a link "Farm Activities"-->
+<div class="modal fade bannerformmodal" tabindex="-1" role="dialog" aria-labelledby="bannerformmodal" aria-hidden="true" id="bannerformmodal">
+  <div class="modal-dialog modal-sm">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title" id="myModalLabel">Add Farm Activity</h4>
+        </div>
+        <div class="modal-body">
+          <div class="container-fluid text-center">
+            <div class="row content">
+              <div class="col-sm-2 sidenav"></div>
+              <div class="col-sm-8 text-left">
+                <div class="form-group"><br>
+                  <form>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Activity Name</label>
+                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter activity name">
+                    </div>
+                    <div class="form-group">
+                      <label for="example-date-input">Start Date</label>
+                      <input class="form-control" type="date" value="2011-08-19" id="example-date-input">
+                    </div>
+                    <div class="form-group">
+                      <label for="example-date-input">Due Date</label>
+                      <input class="form-control" type="date" value="2011-08-19" id="example-date-input">
+                    </div>
+                    <div class="form-group">
+                      <label for="example-date-input">Status</label>
+                      <select class="form-control">
+                        <option>Ongoing</option>
+                        <option>Completed</option>
+                        <option>Dropped</option>
+                      </select>
+                    </div>
+                  </form>
+                </div>
+                <hr>
+              </div>
+              <div class="col-sm-2 sidenav"></div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-blue">Submit</button>
+        </div>        
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Trigger the modal with a link "Plot Informations"-->
+<div class="modal fade bannerformmodal2" tabindex="-1" role="dialog" aria-labelledby="bannerformmodal2" aria-hidden="true" id="bannerformmodal2">
+  <div class="modal-dialog modal-sm">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title" id="myModalLabel">Add Plot Information</h4>
+        </div>
+        <div class="modal-body">
+          <div class="container-fluid text-center">
+            <div class="row content">
+              <div class="col-sm-2 sidenav"></div>
+              <div class="col-sm-8 text-left">
+                <div class="form-group"><br>
+                  <form>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Plot ID</label>
+                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter plot id">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Area</label>
+                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter area">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Capacity</label>
+                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter capacity">
+                    </div>
+                    <div class="form-group">
+                      <label for="example-date-input">Status</label>
+                      <select class="form-control">
+                        <option>Ongoing</option>
+                        <option>Completed</option>
+                        <option>Dropped</option>
+                      </select>
+                    </div>
+                  </form>
+                </div>
+                <hr>
+              </div>
+              <div class="col-sm-2 sidenav"></div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-blue">Submit</button>
+        </div>        
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Trigger the modal with a link "Reports"-->
+<div class="modal fade bannerformmodal3" tabindex="-1" role="dialog" aria-labelledby="bannerformmodal3" aria-hidden="true" id="bannerformmodal3">
+  <div class="modal-dialog modal-sm">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title" id="myModalLabel">Add Report</h4>
+        </div>
+        <div class="modal-body">
+          <div class="container-fluid text-center">
+            <div class="row content">
+              <div class="col-sm-2 sidenav"></div>
+              <div class="col-sm-8 text-left">
+                <div class="form-group"><br>
+                  <form>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Report ID</label>
+                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter report id">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Report Name</label>
+                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter report name">
+                    </div>
+                  </form>
+                </div>
+                <hr>
+              </div>
+              <div class="col-sm-2 sidenav"></div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-blue">Submit</button>
+        </div>        
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Trigger the modal with a link "Activity Request"-->
+<div class="modal fade bannerformmodal4" tabindex="-1" role="dialog" aria-labelledby="bannerformmodal4" aria-hidden="true" id="bannerformmodal4">
+  <div class="modal-dialog modal-sm">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title" id="myModalLabel">Add Activity Request</h4>
+        </div>
+        <div class="modal-body">
+          <div class="container-fluid text-center">
+            <div class="row content">
+              <div class="col-sm-2 sidenav"></div>
+              <div class="col-sm-8 text-left">
+                <div class="form-group"><br>
+                  <form>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Request ID</label>
+                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter request id">
+                    </div>
+                    <div class="form-group">
+                      <label for="example-date-input">Request Date</label>
+                      <input class="form-control" type="date" value="2011-08-19" id="example-date-input">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Request Information</label>
+                      <input type="textarea" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter request information">
+                    </div>
+                  </form>
+                </div>
+                <hr>
+              </div>
+              <div class="col-sm-2 sidenav"></div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="submit" class="btn btn-blue">Submit</button>
+        </div>        
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
+

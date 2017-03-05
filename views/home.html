@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+  <title>HOME</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+
+  <script>
+        var myApp = angular.module("myApp", []);
+            myApp.controller('AddActivityController', ['$scope','$http',function($scope,$http){
+                          $scope.activityName = ''
+                          $scope.activityStatus = ''
+                          $scope.startDate = ''
+                          $scope.dueDate = ''
+                          $scope.requestNo = ''
+                    $scope.addActivity=function(){
+                        $http.post('/add/farmactivity/', {
+                            activityName: $scope.activityName,
+                            activityStatus: $scope.activityStatus,
+                            startDate: $scope.startDate,
+                            dueDate: $scope.dueDate,
+                            requestNo: $scope.requestNo
+                        }).then(function(result){
+                          $scope.activityName = ''
+                          $scope.activityStatus = ''
+                          $scope.startDate = ''
+                          $scope.dueDate = ''
+                          $scope.requestNo = ''
+                        });
+                        
+                    }
+              }])
+
+                        myApp.controller('AddActivityController', ['$scope','$http',function($scope,$http){
+                          $scope.activityName = ''
+                          $scope.activityStatus = ''
+                          $scope.startDate = ''
+                          $scope.dueDate = ''
+                          $scope.requestNo = ''
+                    $scope.addActivity=function(){
+                        $http.post('/add/farmactivity/', {
+                            activityName: $scope.activityName,
+                            activityStatus: $scope.activityStatus,
+                            startDate: $scope.startDate,
+                            dueDate: $scope.dueDate,
+                            requestNo: $scope.requestNo
+                        }).then(function(result){
+                          $scope.activityName = ''
+                          $scope.activityStatus = ''
+                          $scope.startDate = ''
+                          $scope.dueDate = ''
+                          $scope.requestNo = ''
+                        });
+                        
+                    }
+              }])
+
+             myApp.controller('AddPlotController', ['$scope','$http',function($scope,$http){
+                          $scope.plotId = ''
+                          $scope.area = ''
+                          $scope.capacity = ''
+                          $scope.plotStatus = ''
+                          $scope.username = ''
+                    $scope.addPlotInfo=function(){
+                        $http.post('/add/plotinformation/', {
+                            plotId: $scope.plotId,
+                            area: $scope.area,
+                            capacity: $scope.capacity,
+                            plotStatus: $scope.plotStatus,
+                            username: $scope.username
+                        }).then(function(results){
+                          $scope.alertMessage = results.data
+                          $scope.plotId = ''
+                          $scope.area = ''
+                          $scope.capacity = ''
+                          $scope.plotStatus = ''
+                          $scope.username = ''
+                        })
+                        
+                    }
+              }])
+
+             myApp.controller('AddRequestController', ['$scope','$http',function($scope,$http){
+                          $scope.requestDate = ''
+                          $scope.username = ''
+                          $scope.requestDefinition = ''
+                    $scope.addRequest=function(){
+                        $http.post('/add/request/', {
+                          requestDate: $scope.requestDate,
+                          username: $scope.username,
+                          requestDefinition: $scope.requestDefinition
+                        }).then(function(results){                 
+                          $scope.requestDate = ''
+                          $scope.username = ''
+                          $scope.requestDefinition = ''
+                        })
+                        
+                    }
+              }])
+
+             myApp.controller('AddPersonnelController', ['$scope','$http',function($scope,$http){
+                          $scope.username = ''
+                          $scope.password = ''
+                          $scope.name = ''
+                          $scope.birthday = ''
+                          $scope.age = ''
+                          $scope.type = ''
+                    $scope.addPersonnel=function(){
+                        $http.post('/add/personnel/', {
+                            username: $scope.username,
+                            password: $scope.password,
+                            name: $scope.name,
+                            birthday: $scope.birthday,
+                            age: $scope.age,
+                            type: $scope.type
+                        }).then(function(results){
+                          $scope.username = ''
+                          $scope.password = ''
+                          $scope.name = ''
+                          $scope.birthday = ''
+                          $scope.age = ''
+                          $scope.type = ''
+                        })
+                    }
+              }])
+
+  </script>
+
+</head>
+<body>
+
+<nav class="navbar navbar-findcond navbar-fixed-top">
+    <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="../views/home.html">HAHAH Farm Monitor</a>
+    </div>
+    <div class="collapse navbar-collapse" id="navbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Add<span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li>
+              <a href="" data-toggle="modal" data-target=".bannerformmodal">Farm Activities</a>
+            </li>
+            <li>
+              <a href="" data-toggle="modal" data-target=".bannerformmodal2">Plot Information</a>
+            </li>
+            <li>
+              <a href="" data-toggle="modal" data-target=".bannerformmodal3">Add Personnel</a>
+            </li>
+            <li>
+              <a href="" data-toggle="modal" data-target=".bannerformmodal4">Activity Request</a>
+            </li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">User<span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="/">Sign out</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<a href="../views/FarmActivities.html" ><div class="panel-group col-md-2"></div>
+<div class="panel-group col-md-2">
+  <div class="panel panel-default">
+    <div class="panel-body">Farm Activities</div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-body"><img src="../photos/farmer.png"></div>
+  </div>
+</div></a>
+<a href="../views/FarmPersonnels.html"><div class="panel-group col-md-2">
+  <div class="panel panel-default">
+    <div class="panel-body">Farm Personnels</div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-body"><img src="../photos/farmers.png"></div>
+  </div>
+</div></a>
+<a href="../views/PlotInformation.html"><div class="panel-group col-md-2">
+  <div class="panel panel-default">
+    <div class="panel-body">Plot Information</div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-body"><img src="../photos/farm.png"></div>
+  </div>
+</div></a>
+<a href="../views/ActivityRequests.html"><div class="panel-group col-md-2">
+  <div class="panel panel-default">
+    <div class="panel-body">Activity Requests</div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-body"><img src="../photos/activity.png"></div>
+  </div>
+</div></a>
+<div class="panel-group col-md-2"></div>
+
+
+<!-- Trigger the modal with a link "Farm Activities"-->
+<div ng-app="myApp" ng-controller="AddActivityController" class="modal fade bannerformmodal" tabindex="-1" role="dialog" aria-labelledby="bannerformmodal" aria-hidden="true" id="bannerformmodal">
+  <div class="modal-dialog modal-sm">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title" id="myModalLabel">Add Farm Activity</h4>
+        </div>
+        <div class="modal-body">
+          <div class="container-fluid text-center">
+            <div class="row content">
+              <div class="col-sm-2 sidenav"></div>
+              <div class="col-sm-8 text-left">
+                <div class="form-group"><br>
+
+                  <form>
+                    <div class="form-group">
+                      <label for="addactname">Activity Name</label>
+                      <input class="form-control" type="text" id="act-name" value="" placeholder="Enter activity name" ng-model="activityName">
+                    </div>
+                     <div class="form-group">
+                      <label for="example-date-input">Status</label>
+                      <select class="form-control" ng-model="activityStatus">
+                        <option>Ongoing</option>
+                        <option>Completed</option>
+                        <option>Dropped</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label for="addstartdate">Start Date</label>
+                      <input class="form-control" type="text" value="" id="startdate" placeholder="yyyy-mm-dd" ng-model="startDate">
+                    </div>
+                    <div class="form-group">
+                      <label for="addduedate">Due Date</label>
+                      <input class="form-control" type="text" value="" id="duedate" placeholder="yyyy-mm-dd" ng-model="dueDate">
+                    </div>
+                    <div class="form-group">
+                      <label for="addactrep">Request Number</label>
+                      <input class="form-control" type="text" id="activity-request" value="" placeholder="Request Number" ng-model="requestNo">
+                    </div>
+                      <div class="col-sm-2 sidenav"></div>
+                      <hr>
+                    <button type="button" ng-click="addActivity()" class="btn btn-blue" data-dismiss="modal">Submit</button>
+                  </form>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>       
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Trigger the modal with a link "Plot Informations"-->
+<div ng-app="myApp" ng-controller="AddPlotController" class="modal fade bannerformmodal2" tabindex="-1" role="dialog" aria-labelledby="bannerformmodal2" aria-hidden="true" id="bannerformmodal2">
+  <div class="modal-dialog modal-sm">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title" id="myModalLabel">Add Plot Information</h4>
+        </div>
+        <div class="modal-body">
+          <div class="container-fluid text-center">
+            <div class="row content">
+              <div class="col-sm-2 sidenav"></div>
+              <div class="col-sm-8 text-left">
+                <div class="form-group"><br>
+                  <form>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Plot ID</label>
+                      <input type="text" class="form-control" id="plot-id" aria-describedby="texthelp" placeholder="Enter plot id" ng-model="plotId">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Area</label>
+                      <input type="text" class="form-control" id="area" aria-describedby="emailHelp" placeholder="Enter area" ng-model="area">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Capacity</label>
+                      <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter capacity" ng-model="capacity">
+                    </div>
+                    <div class="form-group">
+                      <label for="example-date-input">Status</label>
+                      <select class="form-control" ng-model="plotStatus">
+                        <option>Free</option>
+                        <option>Occupied</option>
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Username</label>
+                      <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter username" ng-model="username">
+                    </div>
+                      <button type="button" ng-click="addPlotInfo()" class="btn btn-blue" data-dismiss="modal">Submit</button>
+                  </form>
+                </div>
+                <hr>
+              </div>
+              <div class="col-sm-2 sidenav"></div>
+            </div>
+          </div>
+        </div>        
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div ng-app="myApp" ng-controller="AddPersonnelController" class="modal fade bannerformmodal3" tabindex="-1" role="dialog" aria-labelledby="bannerformmodal3" aria-hidden="true" id="bannerformmodal3">
+  <div class="modal-dialog modal-sm">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title" id="myModalLabel">Add Personnel</h4>
+        </div>
+        <div class="modal-body">
+          <div class="container-fluid text-center">
+            <div class="row content">
+              <div class="col-sm-2 sidenav"></div>
+              <div class="col-sm-8 text-left">
+                <div class="form-group"><br>
+                  <form>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Username</label>
+                      <input type="text" class="form-control" id="plot-id" aria-describedby="texthelp" placeholder="Enter username" ng-model="username">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Password</label>
+                      <input type="text" class="form-control" id="area" aria-describedby="emailHelp" placeholder="Enter Password" ng-model="Password">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Name</label>
+                      <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter name" ng-model="name">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Birthday</label>
+                      <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter birthday" ng-model="birthday">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Age</label>
+                      <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter age" ng-model="age">
+                    </div>
+                    <div class="form-group">
+                      <label for="example-date-input">Type</label>
+                      <select class="form-control" ng-model="type">
+                        <option>Personnel</option>
+                      </select>
+                    </div>
+                      <button type="button" ng-click="addPersonnel()" class="btn btn-blue" data-dismiss="modal">Submit</button>
+                  </form>
+                </div>
+                <hr>
+              </div>
+              <div class="col-sm-2 sidenav"></div>
+            </div>
+          </div>
+        </div>        
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Trigger the modal with a link "Plot Informations"-->
+<div ng-app="myApp" ng-controller="AddRequestController" class="modal fade bannerformmodal4" tabindex="-1" role="dialog" aria-labelledby="bannerformmodal4" aria-hidden="true" id="bannerformmodal4">
+  <div class="modal-dialog modal-sm">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title" id="myModalLabel">Add Request</h4>
+        </div>
+        <div class="modal-body">
+          <div class="container-fluid text-center">
+            <div class="row content">
+              <div class="col-sm-2 sidenav"></div>
+              <div class="col-sm-8 text-left">
+                <div class="form-group"><br>
+                  <form>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Request Date</label>
+                      <input type="text" class="form-control" id="area" aria-describedby="emailHelp" placeholder="Enter area" ng-model="requestDate">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Username</label>
+                      <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter capacity" ng-model="username">
+                    </div>
+                    <div class="form-group">
+                      <label for="example-date-input">Request Definition</label>
+                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter capacity" ng-model="requestDefinition">
+                    </div>
+                      <button type="button" ng-click="addRequest()" class="btn btn-blue" data-dismiss="modal">Submit</button>
+                  </form>
+                </div>
+                <hr>
+              </div>
+              <div class="col-sm-2 sidenav"></div>
+            </div>
+          </div>
+        </div>        
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
+
